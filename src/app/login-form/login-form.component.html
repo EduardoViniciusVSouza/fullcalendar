@@ -1,0 +1,63 @@
+<mat-tab-group mat-align-tabs="center" mat-stretch-tabs>
+    <mat-tab label="Login">
+        <form class="login-form">
+            <mat-form-field class="fullInputForm">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
+
+            <mat-form-field class="fullInputForm">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password">
+            </mat-form-field>
+
+        </form>
+
+        <button mat-flat-button color="primary">Login</button>
+    </mat-tab> 
+
+
+    <mat-tab label="Cadastrar-se">
+        <form class="register-form--inline">
+            <mat-form-field class="halfInputForm">
+                <input matInput placeholder="Nome">
+            </mat-form-field>
+
+            <mat-form-field class="halfInputForm">
+                <input matInput placeholder="Sobrenome">
+            </mat-form-field>
+        </form>
+
+        <form class="register-form-full">
+            <mat-form-field class="fullInputForm">
+                <input matInput placeholder="Endereço de E-mail">
+            </mat-form-field>
+
+            <mat-form-field class="fullInputForm">
+                <input matInput placeholder="Senha" type="password">
+            </mat-form-field>
+
+            <mat-form-field class="fullInputForm">
+                <input matInput placeholder="Confirmar Senha" type="password">
+            </mat-form-field>
+        </form>
+
+        <form class="register-form--inline">
+           <mat-form-field class="halfInputForm">
+               <input matInput type="date" placeholder="Data de nascimento">
+           </mat-form-field>
+            
+            <mat-form-field class="halfInputForm">
+                <mat-label>Gênero</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let gender of genderList" [value]="gender">
+                        {{gender}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </form>
+
+        <button mat-flat-button color="primary">Criar Conta</button>
+    </mat-tab>
+</mat-tab-group>
