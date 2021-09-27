@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap');
+
 .mat-toolbar {
-    background-color: rgb(190, 40, 60);
+    background-color: rgb(43, 129, 145);
+    border-bottom: solid 1px rgb(0, 0, 0);
 }
 
-span {
-    padding-left: 200px;
+
+#logo {
+    padding-left: 15%;
+}
+
+#logoText {
+    font-family: 'Gemunu Libre', sans-serif;
+    font-weight:bold;
+    font-size: 1.6rem;
+}
+
+.menuOptionIcon {
+    margin-left: 30px;
+}
+
+#settingsIcon {
+    position: absolute;
+    right: 16%;
+    font-size: 1.5rem;
 }

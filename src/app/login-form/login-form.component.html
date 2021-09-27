@@ -3,53 +3,60 @@
         <form class="login-form">
             <mat-form-field class="fullInputForm">
                 <mat-label>E-mail</mat-label>
-                <input matInput type="email">
+                <input matInput type="email" [(ngModel)]="loginForm.email" name="email">
             </mat-form-field>
 
             <mat-form-field class="fullInputForm">
                 <mat-label>Senha</mat-label>
-                <input matInput type="password">
+                <input matInput type="password" [(ngModel)]="loginForm.password" name="password">
             </mat-form-field>
 
         </form>
 
-        <button mat-flat-button color="primary">Login</button>
+        <button mat-flat-button color="primary" (click)="loginPost()">Login</button>
     </mat-tab> 
+    <!--acima, form para login-->
 
-
+    <!--abaixo, form para registro-->
     <mat-tab label="Cadastrar-se">
         <form class="register-form--inline">
             <mat-form-field class="halfInputForm">
-                <input matInput placeholder="Nome">
+                <input matInput placeholder="Nome" [(ngModel)]="registerForm.name" name="nomeForms" required>
+                <mat-error>Campo Necessário</mat-error>
             </mat-form-field>
 
             <mat-form-field class="halfInputForm">
-                <input matInput placeholder="Sobrenome">
+                <input matInput placeholder="Sobrenome" [(ngModel)]="registerForm.surname" name="surnameForms" required>
+                <mat-error>Campo Necessário</mat-error>
             </mat-form-field>
         </form>
 
         <form class="register-form-full">
             <mat-form-field class="fullInputForm">
-                <input matInput placeholder="Endereço de E-mail">
+                <input matInput placeholder="Endereço de E-mail" [(ngModel)]="registerForm.email" name="nameForms" required>
+                <mat-error>Campo Necessário</mat-error>
             </mat-form-field>
 
             <mat-form-field class="fullInputForm">
-                <input matInput placeholder="Senha" type="password">
+                <input matInput placeholder="Senha" type="password" [(ngModel)]="registerForm.password" name="passForms" required>
             </mat-form-field>
 
             <mat-form-field class="fullInputForm">
-                <input matInput placeholder="Confirmar Senha" type="password">
+                <input matInput placeholder="Confirmar Senha" type="password" [(ngModel)]="registerForm.confpassword"
+                name="confPassForms" required >
+                <mat-error>Campo Necessário</mat-error>
             </mat-form-field>
         </form>
 
         <form class="register-form--inline">
            <mat-form-field class="halfInputForm">
-               <input matInput type="date" placeholder="Data de nascimento">
+               <input matInput type="date" placeholder="Data de nascimento" [(ngModel)]="registerForm.birth"
+               name="birthForms">
            </mat-form-field>
             
             <mat-form-field class="halfInputForm">
                 <mat-label>Gênero</mat-label>
-                <mat-select>
+                <mat-select [(ngModel)]="registerForm.gender" name="genderForms">
                     <mat-option *ngFor="let gender of genderList" [value]="gender">
                         {{gender}}
                     </mat-option>
@@ -58,6 +65,6 @@
 
         </form>
 
-        <button mat-flat-button color="primary">Criar Conta</button>
+        <button mat-flat-button color="primary" (click)="registerPost()">Criar Conta</button>
     </mat-tab>
 </mat-tab-group>

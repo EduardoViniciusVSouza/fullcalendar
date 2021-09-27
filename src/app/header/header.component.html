@@ -1,3 +1,18 @@
 <mat-toolbar>
-    <span>Asnyer</span>
+    <mat-icon id="logo" aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon>
+    <span id="logoText">
+        SmartCalendar
+    </span>
+
+    <button id="settingsIcon" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>settings</mat-icon>
+    </button>
+
+    <mat-menu #menu xPosition="before">
+        <button mat-menu-item (click)="logout()">
+            <span>Logout</span>
+            <mat-icon class="menuOptionIcon">input</mat-icon>
+        </button>
+    </mat-menu>
+
 </mat-toolbar>

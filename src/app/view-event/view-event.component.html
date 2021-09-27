@@ -1,0 +1,35 @@
+<h1 mat-dialog-title *ngIf="editMode == false">{{data.title}} {{data.date}}</h1>
+
+<!--conteúdo do dialog inicial, utiliza os dados injetados-->
+<div mat-dialog-content *ngIf="editMode == false">
+    <h2>Descrição:</h2>
+    <h4>{{data.description}}</h4>
+    <h2>Horário</h2>
+    <h4>{{data.startTime}}-{{data.finishTime}}</h4>
+</div>
+
+<!--conteúdo do dialog em modo de edição, utiliza os dados injetados-->
+<div mat-dialog-content *ngIf="editMode">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nome do Evento" [(ngModel)]="data.title" value="{{data.title}}">
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Descrição do Evento" [(ngModel)]="data.description" value="{{data.description}}">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput type="time" placeholder="Horário de Início" [(ngModel)]="data.startTime" value="{{data.startTime}}">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput type="time" placeholder="Horário de Término" [(ngModel)]="data.finishTime" value="{{data.finishTime}}">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="closeDialog()">Cancelar</button>
+    <button *ngIf="editMode==false" mat-raised-button color="primary" (click)="changeEditMode(true)">Editar</button>
+    <button *ngIf="editMode" mat-raised-button color="primary" (click)="updateEvent()">Salvar</button>
+    <button *ngIf="editMode==false" mat-raised-button color="warn" (click)="removeEvent()">Remover</button>
+  </div>

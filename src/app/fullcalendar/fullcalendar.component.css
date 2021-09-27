@@ -1,0 +1,15 @@
+full-calendar {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+mat-tab-group {
+    width: 68%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+mat-tab {
+    width: 100%;
+}

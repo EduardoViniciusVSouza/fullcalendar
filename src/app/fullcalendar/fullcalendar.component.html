@@ -1,0 +1,32 @@
+
+<mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Calendário">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+    </mat-tab>
+    <!--acima, full calendar do angular material-->
+
+    <!--abaixo, tabela para listagem de eventos do usuário-->
+    <mat-tab label="Eventos">
+        <mat-table [dataSource]="events">
+            <ng-container matColumnDef="Evento">
+                <mat-header-cell *matHeaderCellDef>Evento</mat-header-cell>
+                <mat-cell *matCellDef="let evento">{{evento.title}}</mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Duration">
+                <mat-header-cell *matHeaderCellDef>Inicio</mat-header-cell>
+                <mat-cell *matCellDef="let evento">{{evento.startTime}}-{{evento.finishTime}}</mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Data">
+                <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+                <mat-cell *matCellDef="let evento">{{evento.date}}</mat-cell>
+            </ng-container>
+        
+        
+            <mat-header-row *matHeaderRowDef="eventListColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: eventListColumns;"></mat-row>
+        </mat-table>
+    </mat-tab>
+</mat-tab-group>
+
